@@ -30,5 +30,9 @@ jobs:
         run: |
           version=$(grep '^version' gradle.properties | cut -d= -f2 | tr -d '[:space:]')
           echo "1: $version"
+
+          version_1_2=$(grep -n '^version' gradle.properties)
+          echo "1.1: $version_1_2"
+
           version=$(echo "$version" | sed 's/-/%E2%80%90/g')
           echo "2: $version"
